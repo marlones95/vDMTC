@@ -15,7 +15,7 @@ Matlab codes for the analyses performed for the manuscript titled "Effector-Spec
 
 
 ### Required software packages and toolboxes: 
-SPM12 https://www.fil.ion.ucl.ac.uk/spm/software/spm12/ 
-The Decoding Toolbox (TDT) https://sites.google.com/site/tdtdecodingtoolbox/
-VBA toolbox: https://mbb-team.github.io/VBA-toolbox/
+- [SPM12] (https://www.fil.ion.ucl.ac.uk/spm/software/spm12/)
+- [The Decoding Toolbox (TDT)] (https://sites.google.com/site/tdtdecodingtoolbox/)
+- [VBA toolbox] (https://mbb-team.github.io/VBA-toolbox/)
 
