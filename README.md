@@ -12,10 +12,16 @@ Neuroscientific research has shown that perceptual decision-making occurs in eff
 Matlab codes for the analyses performed for the manuscript titled "Effector-Specific Neural Representations of Perceptual Decisions Independent of Motor Actions and Sensory Modalities".
 
 ### VBA
-
+- VBA_MAIN: Batch script for the variational Bayes routine
+- f_vDMTC_simple: Evolution function
+- g_vDMTC_simple_bias: Observation function
+- Plot_TOE: Illustration of the time-order effect
+- Figure_2b_c: Script for Figures 2b and 2c
+- Supplementary_Figure_1: Script for Supplementary Figure 1
+- compute_TOE_performance: Function computing d' and empirical time-order effect
 
 ### Required software packages and toolboxes: 
-- [SPM12] (https://www.fil.ion.ucl.ac.uk/spm/software/spm12/)
-- [The Decoding Toolbox (TDT)] (https://sites.google.com/site/tdtdecodingtoolbox/)
-- [VBA toolbox] (https://mbb-team.github.io/VBA-toolbox/)
+- SPM12: https://www.fil.ion.ucl.ac.uk/spm/software/spm12/
+- The Decoding Toolbox (TDT): https://sites.google.com/site/tdtdecodingtoolbox/
+- VBA toolbox: https://mbb-team.github.io/VBA-toolbox/
 
