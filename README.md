@@ -20,6 +20,7 @@ Matlab codes for the analyses performed for the manuscript titled "Effector-Spec
 - Figure 2D: Script for Figure 2D
 - Supplementary_Figure_1: Script for Supplementary Figure 1
 - compute_TOE_performance: Function computing d' and empirical time-order effect
+- Model_comparisons: Script performing single subject model comparison and group level Bayesian model selection
 
 ### Required software packages and toolboxes: 
 - SPM12: https://www.fil.ion.ucl.ac.uk/spm/software/spm12/
