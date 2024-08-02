@@ -99,7 +99,7 @@ for r = 1:size(runs,2)
     end    
 
 
-    % Allocatin the conditions
+    % Allocating the conditions
     matlabbatch{1, 1}.spm.stats.fmri_spec.sess(r).scans = cellstr(files');
 
     matlabbatch{1}.spm.stats.fmri_spec.sess(r).hpf = hpf; % high pass filter
@@ -178,8 +178,6 @@ for r = 1:size(runs,2)
         WM = spm_select('FPList', [data_dir '\PCA_4mm9090' ], ['^run0' num2str(r) '_wm.mat']);
         matlabbatch{1}.spm.stats.fmri_spec.sess(r).multi_reg = {CSF; WM; mf};
     end
-
-    matlabbatch{1}.spm.stats.fmri_spec.sess(r).hpf = hpf; % high pass filter
 
 end
 

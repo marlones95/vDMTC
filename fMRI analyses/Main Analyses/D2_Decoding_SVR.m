@@ -1,5 +1,7 @@
-function D2_Decoding_SVR(beta_dir, output_dir, labelnames, dec_type, rad, subj_posterior)
+%% Decoding script: SVR
 % This Script specifies what features should be decoded and then executes the Decoding analysis.
+function D2_Decoding_SVR(beta_dir, output_dir, labelnames, dec_type, rad, subj_posterior)
+
 
 % Create output directory if it does not exist yet
 if ~exist(output_dir, 'dir')

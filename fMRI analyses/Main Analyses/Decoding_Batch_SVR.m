@@ -33,7 +33,7 @@ addpath('C:\Users\nnu16\Documents\MATLAB\decoding_toolbox'); % The Decoding Tool
 addpath('D:\vDMTC\fMRI Analysis\Preprocessing'); % Path containing pre-processing scripts
 addpath('D:\vDMTC\fMRI Analysis\Decoding'); % Path containing decoding scripts
 
-% Specify
+% Specify data paths
 sourceF = 'D:\vDMTC\rawdata'; % source directory containing raw dicom files
 targetF = 'D:\vDMTC\data';    % target directory for all nifti files
 
@@ -178,7 +178,7 @@ if first_level_glm
             continue;
         else
             outputfolder = '\decoding_glm_SVR';
-            display(['Step 2, 1st level glm: ' Subjects{sj}])
+            display(['Step 5, 1st level glm: ' Subjects{sj}])
             subj_dir = fullfile(targetF, Subjects{sj});
             % D1_glm_1stLevel_SVR sets up GLM estimating betas for all 16
             % conditions
@@ -201,7 +201,7 @@ if dec_anal
         if ismember(sj, excludeSJ)
             continue;
         else
-            display(['Step 3, Decoding: ' Subjects{sj} ])
+            display(['Step 6, Decoding: ' Subjects{sj} ])
             beta_dir = fullfile(targetF, Subjects{sj}, 'decoding_glm_SVR');
             output_dir = fullfile(targetF, Subjects{sj}, 'dec_SVR');
             % D2regress_Decoding_batch runs the SVR analysis with the SFDs
@@ -231,7 +231,7 @@ if coregister
                 numVols     = size(f3,1);
                 Images      = cellstr([repmat([data_dir filesep], numVols, 1) f3 repmat(',1', numVols, 1)]);
                 if Co_er ~= 1
-                    display(['Step 5, coregistration (estimate): ' Subjects{sj}])
+                    display(['Step 7, coregistration (estimate): ' Subjects{sj}])
                     % A5a_coregister_est performs coregistration using the 
                     % spm_jobman with the pre-defined parameters. It 
                     % coregisters the structural image to the mean of the 
@@ -262,7 +262,7 @@ if segmentation
         if ismember(sj, excludeSJ)
             continue;
         elseif exist([targetF filesep Subjects{sj} filesep ana])==7
-            display(['Step 6, segmentation: ' Subjects{sj}])
+            display(['Step 8, segmentation: ' Subjects{sj}])
             struct_dir = fullfile(targetF, Subjects{sj}, 'anat');
             % A6_segmentation performs segmentation of the structural image
             % using the spm_jobman with pre-defined parameters. 
@@ -286,7 +286,7 @@ if normalization
             continue;
         else
             if exist([targetF filesep Subjects{sj} '\dec_SVR'])
-                display(['Step 4, normalization: ' Subjects{sj}])
+                display(['Step 9, normalization: ' Subjects{sj}])
                 funcPath = [targetF filesep Subjects{sj}];
                 struct_dir = fullfile(funcPath, 'anat');
                 data_dir = fullfile(funcPath, 'dec_SVR');
@@ -313,7 +313,7 @@ if smoothing
         if ismember(sj, excludeSJ)
             continue;
         else
-            display(['Step 5, Smoothing: ' Subjects{sj}])
+            display(['Step 10, Smoothing: ' Subjects{sj}])
             sj_dir = [targetF filesep Subjects{sj}];
             data_dir = [sj_dir filesep 'dec_SVR'];
             % A8_smoothing_run performs smoothing of functional image with
