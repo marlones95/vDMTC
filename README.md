@@ -29,6 +29,19 @@ Matlab codes for the analyses performed for the manuscript titled "Effector-Spec
 - D2_Decoding_SVR: Function running the support vector regression decoding
 - Second_Level_Decoding: Script running the 2nd level one-sample t-test
 
+#### Conjunction Analysis
+- t_test_SVR: Batch script for the conjunction
+- t_test_job_SVR: setting up the conjunction
+- Estimate_job_SVR: Parameter estimation for the conjunction
+
+#### Control Analyses
+- Decoding_Batch: Batch for the Support Vector Machine classification for motor response and rule decoding
+- D1_glm_1stLevel_left_vs_right: Function running the GLM for motor response
+- D1_glm_1stLevel_rule: Function running the GLM for rule
+- D2class_Decoding: Function running the support vector machine classification
+- Second_Level_Decoding_left_vs_right: Script running the 2nd level one-sample t-test for motor response
+- Second_Level_Decoding_rule: Script running the 2nd level one-sample t-test for rule
+
 ### Required software packages and toolboxes: 
 - SPM12: https://www.fil.ion.ucl.ac.uk/spm/software/spm12/
 - The Decoding Toolbox (TDT): https://sites.google.com/site/tdtdecodingtoolbox/
