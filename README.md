@@ -22,6 +22,13 @@ Matlab codes for the analyses performed for the manuscript titled "Effector-Spec
 - compute_TOE_performance: Function computing d' and empirical time-order effect
 - Model_comparisons: Script performing single subject model comparison and group level Bayesian model selection
 
+### fMRI Analyses
+#### Main Analyses
+- Decoding_Batch_SVR: Batch script running all pre-processing and analysis functions (first level)
+- D1_glm_1stLevel_SVR: Function running the GLM
+- D2_Decoding_SVR: Function running the support vector regression decoding
+- Second_Level_Decoding: Script running the 2nd level one-sample t-test
+
 ### Required software packages and toolboxes: 
 - SPM12: https://www.fil.ion.ucl.ac.uk/spm/software/spm12/
 - The Decoding Toolbox (TDT): https://sites.google.com/site/tdtdecodingtoolbox/
