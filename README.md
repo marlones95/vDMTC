@@ -42,6 +42,10 @@ Matlab codes for the analyses performed for the manuscript titled "Effector-Spec
 - Second_Level_Decoding_left_vs_right: Script running the 2nd level one-sample t-test for motor response
 - Second_Level_Decoding_rule: Script running the 2nd level one-sample t-test for rule
 
+#### Behavioural Analyses
+- ANOVA_three_way: Script running a three-way repeated measures ANOVA (factors: rule, stimulus order, f1 frequency)
+- Chi_Squared_tests: Script running the chi-squared testd (comparing motor responses)
+
 ### Required software packages and toolboxes: 
 - SPM12: https://www.fil.ion.ucl.ac.uk/spm/software/spm12/
 - The Decoding Toolbox (TDT): https://sites.google.com/site/tdtdecodingtoolbox/
