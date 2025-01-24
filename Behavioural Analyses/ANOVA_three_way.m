@@ -14,9 +14,12 @@ clc
 % =========================================================================
 
 % Initialize subject cell array
-SJs = {'01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15',...
-    '16', '17', '18', '19', '20','21', '22', '23', '24', '26', '27', '28', '29', '30', '31', '32',...
-    '33', '34', '35', '36', '37'}; % 25 excluded because of problems with projector
+SJs = {'02', '03', '04', '05', '07', '08', '09', '10', '12', '16', '17', '18', '22', '23', '26', '27', '29', '30', '31', '32',...
+    '33', '34', '36', '37'}; 
+% SJ25 excluded because of problems with projector
+% Subjects excluded because performance in one condition < 0.5: SJ01, SJ06, SJ11, SJ13, SJ14, SJ19, SJ21, SJ24, SJ28
+% Subjects excluded with head movement > 3mm: SJ15, SJ20, SJ35
+
 sjs = size(SJs,2); % number of subjects
 
 % Directory containing log files
@@ -77,7 +80,8 @@ end
 % =========================================================================
 
 % Dependent Variable: Performance per condition
-DV = perf_FAS_SAF;
+% Apply arcsine square root transformation to the performance data
+DV = asin(sqrt(perf_FAS_SAF));
 
 % Subjects:
 S = kron(1:sjs, ones(1,16))';

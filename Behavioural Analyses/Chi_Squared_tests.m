@@ -7,11 +7,11 @@ clear
 % https://de.mathworks.com/matlabcentral/fileexchange/45966-compare-two-proportions-chi-square
 
 % Initialize Subject cell array
-SJs     = {'sub-001','sub-002','sub-003','sub-004','sub-006','sub-005','sub-007','sub-008',...
-    'sub-009','sub-010','sub-011','sub-012','sub-013', 'sub-014','sub-015','sub-016',...
-    'sub-017','sub-018','sub-019','sub-020','sub-021','sub-022','sub-023','sub-024',...
-    'sub-026','sub-027','sub-029','sub-028','sub-030','sub-031','sub-032','sub-033',...
-    'sub-034','sub-035','sub-036','sub-037'}; % 25 excluded because of problems with projector
+SJs     = {'sub-002','sub-003','sub-004','sub-005','sub-007','sub-008','sub-009','sub-010','sub-012','sub-016','sub-017',...
+    'sub-018','sub-022','sub-023','sub-026','sub-027','sub-029','sub-030','sub-031','sub-032','sub-033','sub-034','sub-036','sub-037'};
+% SJ25 excluded because of problems with projector
+% Subjects excluded because performance in one condition < 0.5: SJ01, SJ06, SJ11, SJ13, SJ14, SJ19, SJ21, SJ24, SJ28
+% Subjects excluded with head movement > 3mm: SJ15, SJ20, SJ35
 
 % Directory containing log files
 log_dir = 'D:\vDMTC\Logs';
