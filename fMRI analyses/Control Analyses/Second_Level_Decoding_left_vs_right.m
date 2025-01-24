@@ -8,18 +8,19 @@ clc; clear;
 
 data_dir        = 'D:\vDMTC\data';
 GLM_name = 'Decoding_left_vs_right';
-radius = 5;
+radius = 4;
 analysis_name   = ['Searchlight\' 'SVM_r' num2str(radius) 'vox\192s\Control_Analyses\' GLM_name];
 
 
-% 25 excluded because of problems with projector
-SJs     = { 'sub-001','sub-002', 'sub-003', 'sub-004', 'sub-005','sub-006', 'sub-007', 'sub-008',...
-    'sub-009','sub-010','sub-011', 'sub-012', 'sub-013','sub-014', 'sub-015', 'sub-016',...
-    'sub-017', 'sub-018','sub-019', 'sub-020','sub-021', 'sub-022', 'sub-023','sub-024',...
-    'sub-026', 'sub-027','sub-028', 'sub-029', 'sub-030', 'sub-031', 'sub-032',...
-    'sub-033', 'sub-034', 'sub-035', 'sub-036', 'sub-037'};
+SJs     = {'sub-002','sub-003','sub-004','sub-005','sub-007','sub-008','sub-009','sub-010','sub-012','sub-016','sub-017',...
+    'sub-018','sub-022','sub-023','sub-026','sub-027','sub-029','sub-030','sub-031','sub-032','sub-033','sub-034','sub-036','sub-037'};
+% SJ25 excluded because of problems with projector
+% Subjects excluded because performance in one condition < 0.5: SJ01, SJ06, SJ11, SJ13, SJ14, SJ19, SJ21, SJ24, SJ28
+% Subjects excluded with head movement > 3mm: SJ15, SJ20, SJ35
 
-group_mask      = '36Subjects'; % mean MNI-space mask for the second level Analysis from the first level masks
+% Create a mean MNI-space mask for the second level Analysis from the first level masks
+group_mask      = [num2str(length(SJs)), GLM_name];
+MNImask(data_dir, GLM_name, SJs, group_mask); %Function creating the MNI mask
 
 % Output directory:
 out_dir         = fullfile(data_dir, 'RFX\TTest', [analysis_name]);
