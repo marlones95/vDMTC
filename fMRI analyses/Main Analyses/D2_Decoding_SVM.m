@@ -1,4 +1,4 @@
-%% Decoding script: SVR
+%% Decoding script: SVM
 % This Script specifies what features should be decoded and then executes the Decoding analysis.
 function D2_Decoding_SVM(beta_dir, output_dir, labelnames, dec_type, rad)
 

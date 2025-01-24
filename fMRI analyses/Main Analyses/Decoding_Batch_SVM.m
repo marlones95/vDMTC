@@ -1,4 +1,4 @@
-%% MVPA support vector regression analysis batch script
+%% MVPA support vector machine analysis batch script
 
 % This Batch Script specifies preprocessing and decoding analyses and
 % executes the respective scripts

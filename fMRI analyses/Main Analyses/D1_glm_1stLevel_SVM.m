@@ -1,6 +1,7 @@
-%% First Level GLM for Decoding Subjective Frequency Differences
+%% First Level GLM for Decoding binary decisions
 
-% Setting up the GLM for the Support vector regression by estimating betas for all 16 conditions per run
+% Setting up the GLM for the Support vector machine by estimating betas for
+% the two conditions (high vs low)
 function D1_glm_1stLevel_SVM(Subjects, sj, outputfolder_1st,...
     tr, hpf, runs, condnames, duration, hm, CSFWM_params)
 
