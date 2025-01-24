@@ -20,8 +20,6 @@ currPrefix = ['ra'];
 
 first_level_glm = 1; % First level GLM
 dec_anal        = 1; % Support vector regression analysis
-coregister      = 1; % Coregister functional images to T1
-segmentation    = 1; % Segmentation of T1
 normalization   = 1; % Normalization
 smoothing       = 1; % Smoothing
 
@@ -110,72 +108,9 @@ if dec_anal
     end
 end
 
-% =========================================================================
-%                       Step 4: Coregistration
-% =========================================================================
-
-if coregister
-    Co_er = 0; % default setting: only estimate (no reslice), if 1, then estimate & reslice
-    for sj = 1:numel(Subjects)
-        if ismember(sj, excludeSJ)
-            continue;
-        else
-            if exist([targetF filesep Subjects{sj} filesep 'func'])
-                funcPath    = [targetF filesep Subjects{sj}];
-                func_dir    = fullfile(funcPath, 'func');
-                struct_dir  = fullfile(funcPath, 'anat');
-                sj_dir      = [targetF filesep Subjects{sj}];
-                data_dir    = [sj_dir filesep append('dec',version)];
-                f3          = spm_select('List', data_dir, '^res_accuracy_minus_chance.nii'); % select accuracy-chance file
-                numVols     = size(f3,1);
-                Images      = cellstr([repmat([data_dir filesep], numVols, 1) f3 repmat(',1', numVols, 1)]);
-                if Co_er ~= 1
-                    display(['Step 3, coregistration (estimate): ' Subjects{sj}])
-                    % A5a_coregister_est performs coregistration using the 
-                    % spm_jobman with the pre-defined parameters. It 
-                    % coregisters the structural image to the mean of the 
-                    % functional images. Further, the decoding image 
-                    % (res_zcorr.nii) is also coregistered.
-                    A5a_coregister_est(currPrefix, func_dir, struct_dir, sj, '^sub.*\.nii', Images);
-                else
-                    display(['Step 5b, coregistration (estimate & reslice): ' Subjects{sj}])
-                    A5b_coregister_est_re(currPrefix, func_dir, struct_dir, Subjects{sj}, '^sub.*\.nii', Images);
-                end
-            else
-                display('###########################################################')
-                display(['############### ' Subjects{sj} 's functional data do not exist ###########'])
-            end
-        end
-    end
-end
 
 % =========================================================================
-%                           Step 5: Segmentation
-% =========================================================================
-
-% Segmentation --> prefix y_ (to structural image)
-if segmentation
-    warning off
-    SPM_path  = 'C:\Users\nnu16\Documents\MATLAB\spm12';
-    for sj = 1:numel(Subjects)
-        if ismember(sj, excludeSJ)
-            continue;
-        elseif exist([targetF filesep Subjects{sj} filesep ana])==7
-            display(['Step 8, segmentation: ' Subjects{sj}])
-            struct_dir = fullfile(targetF, Subjects{sj}, 'anat');
-            % A6_segmentation performs segmentation of the structural image
-            % using the spm_jobman with pre-defined parameters. 
-            A6_segmentation(struct_dir, Subjects{sj}, SPM_path, '^sub.*\.nii');
-        else
-            display('###########################################################')
-            display(['############### ' Subjects{sj} ', ' ana ' does not exist ###########'])
-        end
-    end
-end
-
-
-% =========================================================================
-%                           Step 6: Normalization
+%                           Step 4: Normalization
 % =========================================================================
 
 % normalization --> prefix: w
@@ -202,7 +137,7 @@ if normalization
 end
 
 % =========================================================================
-%                           Step 7: Smoothing
+%                           Step 5: Smoothing
 % =========================================================================
 
 % smoothing --> prefix: s
