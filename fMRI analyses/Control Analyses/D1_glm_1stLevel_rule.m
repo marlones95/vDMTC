@@ -52,7 +52,6 @@ SAF(SAF_idx) = delayperiod(SAF_idx);
 %                       Setting up the matlabbatch
 % =========================================================================
 
-
 % event-related analysis
 matlabbatch{1, 1}.spm.stats.fmri_spec.dir = cellstr(tgt_dir); % Output Directory
 matlabbatch{1, 1}.spm.stats.fmri_spec.timing.units = 'secs';
