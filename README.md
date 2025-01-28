@@ -14,22 +14,25 @@ Matlab codes for the analyses performed for the manuscript titled "Effector-Depe
 ### fMRI Analyses
 #### Main Analyses
 - Decoding_Batch: Batch script running all pre-processing and analysis functions (first level)
-- D1_glm_1stLevel: Function running the GLM
+- D1_glm_1stLevel_SVM: Function running the GLM
 - D2_Decoding_SVM: Function running the support vector machine decoding
-- Second_Level_Decoding: Script running the 2nd level one-sample t-test
+- Second_Level_Decoding_SVM: Script running the 2nd level one-sample t-test
 
 #### Conjunction Analysis
-- t_test_SVR: Batch script for the conjunction
-- t_test_job_SVR: setting up the conjunction
-- Estimate_job_SVR: Parameter estimation for the conjunction
+- t_test_SVM: Batch script for the conjunction
+- t_test_job_SVM: setting up the conjunction
+- Estimate_job_SVM: Parameter estimation for the conjunction
 
 #### Control Analyses
-- Decoding_Batch: Batch for the Support Vector Machine classification for motor response and rule decoding
+- Decoding_Batch_control: Batch for the Support Vector Machine classification for motor response and rule decoding
+- Decoding_Batch_subsampling: Batch for the Support Vector Machine classification for the subsampling of motor response and task rule
 - D1_glm_1stLevel_left_vs_right: Function running the GLM for motor response
 - D1_glm_1stLevel_rule: Function running the GLM for rule
+- D1_glm_1stLevel_sub_motor_rule: Function running the GLM for the subsampling of motor response and task rule
 - D2class_Decoding: Function running the support vector machine classification
 - Second_Level_Decoding_left_vs_right: Script running the 2nd level one-sample t-test for motor response
 - Second_Level_Decoding_rule: Script running the 2nd level one-sample t-test for rule
+- Second_Level_Decoding_sub_motor_rule: Script running the 2nd level one-sample t-test for the subsampling
 
 #### Behavioural Analyses
 - ANOVA_three_way: Script running a three-way repeated measures ANOVA (factors: rule, stimulus order, f1 frequency)
@@ -38,4 +41,3 @@ Matlab codes for the analyses performed for the manuscript titled "Effector-Depe
 ### Required software packages and toolboxes: 
 - SPM12: https://www.fil.ion.ucl.ac.uk/spm/software/spm12/
 - The Decoding Toolbox (TDT): https://sites.google.com/site/tdtdecodingtoolbox/
-- VBA toolbox: https://mbb-team.github.io/VBA-toolbox/
