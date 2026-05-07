@@ -38,7 +38,7 @@ cd(tgt_dir)
 % =========================================================================
 
 % Get timing of rule cue for all trials
-delayperiod = squeeze(mylog.timing(2,:,:))';
+delayperiod = squeeze(mylog.timing(5,:,:))';
 
 % mylog.focus indicates which stimulus is the baseline (2 = f1 is baseline; 1 = f2 is Baseline)
 FAS_idx = (mylog.focus == 1);
