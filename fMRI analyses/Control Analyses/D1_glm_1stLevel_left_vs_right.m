@@ -38,7 +38,7 @@ cd(tgt_dir)
 % =========================================================================
 
 % Get timing of motor response for all trials
-delayperiod = squeeze(mylog.timing(7,:,:))' + mylog.resptime;
+delayperiod = squeeze(mylog.timing(5,:,:))';
 
 % mylog.choice_direction indicates left or right response
 left_idx = mylog.choice_direction == 1;
