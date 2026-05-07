@@ -12,6 +12,7 @@ clc; clear;
 
 % Add vector of subject numbers (e.g. 1,2,3,4,5) if any subject has been
 % already analysed to exclude that subjects from the analysis
+excludeSJ = [];
 
 % Specify the current prefix (here ra because the slice-time corrected and
 % realigned images are used)
